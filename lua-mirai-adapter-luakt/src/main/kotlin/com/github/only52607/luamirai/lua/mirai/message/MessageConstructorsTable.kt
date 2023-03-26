@@ -84,7 +84,7 @@ class MessageConstructorsTable(
                                 node["senderId"].optlong(0),
                                 node["time"].optint(0),
                                 node["senderName"].optjstring(""),
-                                node["message"].userdataValueOrNull as? Message ?: EmptyMessageChain
+                                node["message"].userdataValueOrNull as? Message ?: emptyMessageChain()
                             )
                         )
                     }

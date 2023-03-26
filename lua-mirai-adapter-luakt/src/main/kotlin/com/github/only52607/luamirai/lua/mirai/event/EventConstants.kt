@@ -41,10 +41,10 @@ val miraiEvents by lazy {
         set("MemberSpecialTitleChangeEvent", MemberSpecialTitleChangeEvent::class)  //成员群头衔改动. 一定为群主操作
         set("GroupSettingChangeEvent", GroupSettingChangeEvent::class)  //群设置改变. 此事件广播前修改就已经完成.
         set("GroupNameChangeEvent", GroupNameChangeEvent::class)  //群名改变. 此事件广播前修改就已经完成.
-        set(
-            "GroupEntranceAnnouncementChangeEvent",
-            GroupEntranceAnnouncementChangeEvent::class
-        )  //入群公告改变. 此事件广播前修改就已经完成.
+        //set(
+        //    "GroupEntranceAnnouncementChangeEvent",
+        //    GroupEntranceAnnouncementChangeEvent::class
+        //)  //入群公告改变. 此事件广播前修改就已经完成.
         set("GroupMuteAllEvent", GroupMuteAllEvent::class)  //群 "全员禁言" 功能状态改变. 此事件广播前修改就已经完成.
         set("GroupAllowAnonymousChatEvent", GroupAllowAnonymousChatEvent::class)  //群 "匿名聊天" 功能状态改变. 此事件广播前修改就已经完成.
         set("GroupAllowConfessTalkEvent", GroupAllowConfessTalkEvent::class)  //群 "坦白说" 功能状态改变. 此事件广播前修改就已经完成.

@@ -34,7 +34,7 @@ object ConfigurableScriptSourceSerializer : KSerializer<ConfigurableScriptSource
         }
 
     override fun deserialize(decoder: Decoder): ConfigurableScriptSource {
-        decoder.decodeStructure(descriptor) {
+        return decoder.decodeStructure(descriptor) {
             var type = "unknown"
             var value = ""
             var alias = ""
@@ -57,7 +57,7 @@ object ConfigurableScriptSourceSerializer : KSerializer<ConfigurableScriptSource
                 TYPE_URL -> BotScriptSource.URLSource(URL(value), lang)
                 else -> throw IllegalArgumentException("Unsupported script type $type")
             }
-            return ConfigurableScriptSource(source, alias, autoStart)
+            ConfigurableScriptSource(source, alias, autoStart)
         }
     }
 
