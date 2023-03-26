@@ -73,8 +73,8 @@ class LuaMiraiScript(
         LuaC.install(globals)
         globals.finder = ResourceFinderAdapter(globals.finder, source.resourceFinder)
         globals.apply {
-            STDOUT = stdout?.let(::PrintStream)
-            STDERR = stderr?.let(::PrintStream)
+            STDOUT = PrintStream(System.out, false, "UTF-8")
+            STDERR = PrintStream(System.err, false, "UTF-8")
             STDIN = stdin
         }
         mainFunc = globals.load(mainInputStream, source.name, "bt", globals)
@@ -113,6 +113,7 @@ class LuaMiraiScript(
         load(JseIoLib())
         load(JseOsLib())
         load(LuajavaLib())
+        load(DebugLib()) // add debug lib
         load(taskLib)
     }
 
